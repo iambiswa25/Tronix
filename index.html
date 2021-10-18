@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    .container-fluid {
+      padding: 0%;
+    }
+
+    * {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      margin: 0px;
+      padding: 0px;
+      min-height: 100%;
+    }
+
+    li a {
+      text-decoration: none;
+      color: orange;
+      font-size: 20px;
+      font-family: 'Times New Roman', Times, serif
+    }
+
+    .about-text {
+      width: 270px;
+      height: 115px;
+      font-family: serif;
+      font-size: 20px;
+      border-bottom: 2px solid orange;
+    }
+
+    .contact-row {
+      margin-top: 80px;
+    }
+
+    .btn {
+      background-color: black;
+      color: white;
+      float: right;
+    }
+
+    h3 {
+      margin-top: 20px;
+    }
+
+    .td-txt1 {
+      font-size: 30px;
+      font-family: serif;
+    }
+
+    .home-text {
+      font-size: 35px;
+      font-family: serif;
+    }
+
+    .about-heading {
+      font-family: serif;
+    }
+
+    .about-para {
+      font-size: 13px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: bolder;
+    }
+
+    #submitbtn {
+      color: white;
+      width: 150px;
+      height: 30px;
+      border: 1px solid black;
+      font-family: serif;
+      position: relative;
+      left: 90px;
+      bottom: 20px;
+    }
+
+    i {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .table-items {
+      padding-right: 10px;
+    }
+
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+    }
+
+    textarea.form-control {
+      height: 65px;
+    }
+  </style>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Oct 5, 2022 15:37:25").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output the result in an element with id="demo"
+      document.getElementById("daysTd").innerHTML = days;
+      document.getElementById("hrTd").innerHTML = hours;
+      document.getElementById("minTd").innerHTML = minutes;
+      document.getElementById("secTd").innerHTML = seconds;
+
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <header class="navbar navbar-expand-sm bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="./images/img5.png" width="100" height="40" alt="">
+      </a>
+      <ul class="nav nav-pills ml-auto" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link " data-toggle="pill" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="#aboutus">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </header>
+
+    <div class="tab-content">
+      <div id="home" class="container tab-pane active"><br>
+        <div class="container">
+          <div class="row text-center mt-5">
+            <div class="col-md-4">
+              <img src="./images/img.png" width="120" height="120">
+            </div>
+            <div class="col-md-8">
+              <table class="table-borderless">
+                <tr class="ml-2">
+                  <th class="table-items">
+                    <h2 id="daysTd"></h2>
+                  </th>
+                  <th class="table-items">
+                    <h2 id="hrTd"></h2>
+                  </th>
+                  <th class="table-items">
+                    <h2 id="minTd"></h2>
+                  </th>
+                  <th class="table-items">
+                    <h2 id="secTd"></h2>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="td-txt1 table-items">Days</td>
+                  <td class="td-txt1 table-items">Hours</td>
+                  <td class="td-txt1 table-items">Minutes</td>
+                  <td class="td-txt1 table-items">Seconds</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="row text-center mt-5">
+            <div class="col-lg-12">
+              <p class="home-text">Great minds of Tronix Busy with building awesome products for you.<br>
+                Stay in touch.</p>
+            </div>
+          </div>
+
+          <hr class="my-5">
+
+
+        </div>
+      </div>
+      <div id="aboutus" class="container tab-pane fade"><br>
+        <div>
+          <p class="about-text" style="font-size: 20px;">At Tronix, We build quality products, that redirect the future with commitment of socialism.
+          </p>
+        </div>
+        <div class="row text-center mt-1">
+          <div class="col-lg-4">
+            <img src="./images/img2.png" width="250px" height="300px">
+          </div>
+          <div class="col-lg-8">
+            <h2 class="text-warning about-heading">About Us</h2>
+            <p class="about-para">When we developed our first cloud-based 3D printer and gifted it to a SHG group, it
+              was a must-watching facial expression among all the group members. Full of surprise, confusion, and
+              dilemma from an operation point of view.
+              But it was a radical idea of our marketing team. It was a joyful moment for Team Tronix when the SHG group
+              members managed to operate the 3D printer effortlessly.
+              <br><br>
+              Our 3D printers and business model based on “how to work faster and smarter”. Our 3D
+              printers are not only just a machine to print products, but it is also a money-making model.
+              <br><br>
+              We’re leading the 3D printing industry for one reason: we work with the best people and for the common
+              people.
+              Many thanks to our incredible team, who push the industry limits every day
+              <br><br>
+              Tronix is trusted to help educational institutions, lab-establishing companies, STEM training
+              organizations, SHGs, NGOs,
+              stationery shops, studios, craft bakery and unemployed individuals stay ahead of the competition.
+              <br><br>
+              A great idea is nothing without the tools to make it happen. That is the reason, we do not stop with the
+              3D printer itself. We also provide
+              materials, different parts, and expert consultation. Team Tronix can even print parts for you on-demand.
+              <br><br>
+              Our mission drives us to make technological and innovative products that redirect to the future and
+              facilitate people to enjoy the convenience of technology. Team Tronix is committed to making a really
+              big difference in the technology and electronics world. It starts with the 3D printer. We are investing
+              knowledge and manpower in the ICT industry also.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="contact" class="container-lg tab-pane fade"><br>
+        <div class="container">
+          <div class="row text-center contact-row">
+            <div class="col-md-6" id="contact-div1">
+              <form>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="firstName">First Name</label>
+                      <input type="text" maxlength="30" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="lastname">Last Name</label>
+                      <input type="text" maxlength="30" class="form-control" id="lastname" placeholder="Last Name">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="emailId">Email Id</label>
+                  <input type="email" maxlength="50" class="form-control" id="emailId" placeholder="Email Id">
+                </div>
+                <div class="form-group">
+                  <label for="Purpose">Purpose</label>
+                  <textarea maxlength="250" type="text" class="form-control" id="Purpose"
+                    placeholder="Purpose"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="MobileNumber">Mobile Number</label>
+                  <input maxlength="10" class="form-control" id="MobileNumber" placeholder="Mobile Number">
+                </div>
+                <div class="form-group">
+                  <label for="AdditionalDetails">Additional Details</label>
+                  <textarea type="text" maxlength="300" height="50px" class="form-control" id="AdditionalDetails"
+                    placeholder="Additional Details"></textarea>
+                </div>
+                <div class="row">
+                  <div>
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-6">
+                      <button type="submit" style="background-color: #343A40;border: 0px;color:white;">Submit</button>
+                    </div>
+
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-6" id="contact-div2">
+              <h3 class="text-warning" style="font-weight: 700;">Get Connected <span class="text-dark">With Us.</span></h3>
+              <div class="row text-center mt-4">
+                <h3 class="text-dark" style="font-weight: 700;">Made in <span class="text-warning">Odisha</span>  Made in <span class="text-warning">India</span> Made With <span class="text-warning">Pride</span></h3>
+                <div class="col-sm-6">
+                  <img src="./images/img3.png" width="100" height="100">
+                </div>
+                <div class="col-sm-6">
+                  <img src="./images/img4.png" width="100" height="100">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer class="mastfoot mt-auto">
+    <div class="footer bg-dark text-center text-white" style="bottom: 0%;">
+      <div class="container-fluid">
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i
+            class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><i
+            class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i
+            class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          All information is subject to specific conditions | Copyright © 2021 Tronix Industries All rights reserved.
+          <a class="text-white" href="https://mdbootstrap.com/">tronix.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+
+</html>
